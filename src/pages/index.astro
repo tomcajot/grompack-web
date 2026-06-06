@@ -196,48 +196,65 @@ import gal12 from "../assets/gallery/gallery12.jpeg";
         <p class="section-subtitle">The engineers behind the grompack.</p>
 
         <div class="team-grid">
-          <div class="team-member">
-            <img
-              src={matthiasImg.src}
-              alt="Matthias Fransen"
-              class="team-avatar"
-            />
-            <h4>Matthias Fransen</h4>
-            <p>"Ik wil even wat alone-time met de 30 Hz."</p>
-          </div>
-          <div class="team-member">
-            <img
-              src={marijnImg.src}
-              alt="Marijn den Hartog"
-              class="team-avatar"
-            />
-            <h4>Marijn den Hartog</h4>
-            <p>"Ik wardeer je enthousiasme!"</p>
-          </div>
-          <div class="team-member">
-            <img src={samImg.src} alt="Sam Breddels" class="team-avatar" />
-            <h4>Sam Breddels</h4>
-            <p>"Lekker lasagne."</p>
-          </div>
-          <div class="team-member">
-            <img src={ralouImg.src} alt="Ralou Mantzou" class="team-avatar" />
-            <h4>Ralou Mantzou</h4>
-            <p>"We gaan surgery doen op de test pcb."</p>
-          </div>
-          <div class="team-member">
-            <img
-              src={wouterImg.src}
-              alt="Wouter de Ruiter"
-              class="team-avatar"
-            />
-            <h4>Wouter de Ruiter</h4>
-            <p>"Verwarm de oven maar vast wij nemen nog wat mee."</p>
-          </div>
-          <div class="team-member">
-            <img src={tomImg.src} alt="Tom Cajot" class="team-avatar" />
-            <h4>Tom Cajot</h4>
-            <p>"Dat komt goed."</p>
-          </div>
+          {
+            [
+              {
+                href: "https://www.linkedin.com/in/matthias-fransen-544aaa296",
+                img: matthiasImg,
+                name: "Matthias Fransen",
+                quote: "Ik wil even wat alone-time met de 30 Hz.",
+              },
+              {
+                href: "https://www.linkedin.com/in/marijn-den-hartog-958a011a3",
+                img: marijnImg,
+                name: "Marijn den Hartog",
+                quote: "Ik wardeer je enthousiasme!",
+              },
+              {
+                href: "https://www.linkedin.com/in/sam-breddels-2116b8310",
+                img: samImg,
+                name: "Sam Breddels",
+                quote: "Lekker lasagne.",
+              },
+              {
+                href: "https://www.linkedin.com/in/ralou-mantzou-434188208",
+                img: ralouImg,
+                name: "Ralou Mantzou",
+                quote: "We gaan surgery doen op de test pcb.",
+              },
+              {
+                href: "https://www.linkedin.com/in/wouter-de-ruiter-6794ab159",
+                img: wouterImg,
+                name: "Wouter de Ruiter",
+                quote: "Verwarm de oven maar vast wij nemen nog wat mee.",
+              },
+              {
+                href: "https://www.linkedin.com/in/tomcajot",
+                img: tomImg,
+                name: "Tom Cajot",
+                quote: "Dat komt goed.",
+              },
+            ].map(({ href, img, name, quote }) => (
+              <div class="team-member">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="avatar-link"
+                >
+                  <Image
+                    src={img}
+                    alt={name}
+                    class="team-avatar"
+                    width={120}
+                    height={120}
+                  />
+                </a>
+                <h4>{name}</h4>
+                <p>"{quote}"</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -254,61 +271,73 @@ import gal12 from "../assets/gallery/gallery12.jpeg";
             src={gal1}
             alt="GromPack build process 1"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal2}
             alt="GromPack build process 2"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal3}
             alt="GromPack build process 3"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal4}
             alt="GromPack build process 4"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal5}
             alt="GromPack build process 5"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal6}
             alt="GromPack build process 6"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal7}
             alt="GromPack build process 7"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal8}
             alt="GromPack build process 8"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal9}
             alt="GromPack build process 9"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal10}
             alt="GromPack build process 10"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal11}
             alt="GromPack build process 11"
             class="gallery-img"
+            loading="lazy"
           />
           <Image
             src={gal12}
             alt="GromPack build process 12"
             class="gallery-img"
+            loading="lazy"
           />
         </div>
       </div>
@@ -702,39 +731,41 @@ import gal12 from "../assets/gallery/gallery12.jpeg";
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .avatar-link {
+    display: block;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
   }
 
   .team-avatar {
     width: 120px;
     height: 120px;
+    object-fit: cover;
     border-radius: 50%;
-    object-fit: cover; /* Ensures non-square images don't stretch */
-    margin-bottom: 16px;
-    border: 2px solid white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: block;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
-  .placeholder-bg {
-    background-color: white;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text-secondary);
+  .avatar-link:hover .team-avatar {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
 
   .team-member h4 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: var(--text-primary);
+    font-size: 15px;
+    margin: 0;
   }
+
   .team-member p {
-    font-size: 14px;
-    font-style: italic;
-    max-width: 80%;
-    color: var(--text-secondary);
+    font-size: 13px;
   }
 
   /* New Gallery Section */
@@ -939,75 +970,70 @@ import gal12 from "../assets/gallery/gallery12.jpeg";
 </style>
 
 <script>
-  // Modal Logic
+  // --- Modal ---
   const modal = document.getElementById("buyModal");
   const buyBtn = document.getElementById("buyBtn");
   const closeBtn = document.querySelector(".close-btn");
 
   if (buyBtn && modal && closeBtn) {
-    // Open modal
-    buyBtn.addEventListener("click", () => {
-      modal.classList.add("show");
-    });
-
-    // Close modal on X click
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("show");
-    });
-
-    // Close modal when clicking outside the white box
-    window.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        modal.classList.remove("show");
-      }
+    buyBtn.addEventListener("click", () => modal.classList.add("show"));
+    closeBtn.addEventListener("click", () => modal.classList.remove("show"));
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("show");
     });
   }
 
-  // Parallax - Make sure to NOT apply this to the model-viewer itself,
-  // only the container, otherwise it messes with the 3D interaction.
-  document.addEventListener("DOMContentLoaded", () => {
-    const placeholder = document.getElementById("product-render");
-    window.addEventListener("scroll", () => {
-      let offset = window.pageYOffset;
-      if (placeholder) {
-        (placeholder as HTMLElement).style.transform =
-          `translateY(${offset * -0.05}px)`;
+  // --- Lazy-load model-viewer only on desktop ---
+  const isMobile = window.innerWidth < 768;
+  if (!isMobile) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src =
+          "https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js";
+        document.head.appendChild(script);
+        observer.disconnect();
       }
     });
-  });
+    const renderEl = document.getElementById("product-render");
+    if (renderEl) observer.observe(renderEl);
+  }
 
+  // --- Merged, rAF-throttled scroll handler ---
   document.addEventListener("DOMContentLoaded", () => {
-    const placeholder = document.getElementById("product-render");
+    const placeholder = document.getElementById(
+      "product-render",
+    ) as HTMLElement | null;
     const divider = document.querySelector(".roach-divider");
-    const roachMover = document.querySelector(".roach-mover");
+    const roachMover = document.querySelector(
+      ".roach-mover",
+    ) as HTMLElement | null;
+
+    let ticking = false;
 
     window.addEventListener("scroll", () => {
-      // 1. Smooth Parallax
-      let offset = window.pageYOffset;
-      if (placeholder) {
-        (placeholder as HTMLElement).style.transform =
-          `translateY(${offset * -0.05}px)`;
-      }
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const offset = window.pageYOffset;
 
-      // 2. Mathematically Perfect Roach Scurry
-      if (divider && roachMover) {
-        const rect = divider.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+        // Parallax
+        if (placeholder) {
+          placeholder.style.transform = `translateY(${offset * -0.05}px)`;
+        }
 
-        // Measure the physical track width so it never gets clipped
-        const trackWidth = divider.clientWidth;
+        // Roach
+        if (divider && roachMover) {
+          const rect = divider.getBoundingClientRect();
+          const trackWidth = (divider as HTMLElement).clientWidth;
+          let progress = 1 - rect.top / window.innerHeight;
+          progress = Math.max(0, Math.min(1, progress));
+          roachMover.style.transform = `translateX(${-600 + progress * (trackWidth + 200)}px)`;
+        }
 
-        // Progress: 0 = just appeared, 1 = leaving screen
-        let progress = 1 - rect.top / windowHeight;
-        progress = Math.max(0, Math.min(1, progress));
-
-        // We add 200px to the trackWidth to ensure it walks completely off the right edge
-        const totalDistance = trackWidth + 200;
-
-        // TranslateX is much smoother than modifying 'left'
-        (roachMover as HTMLElement).style.transform =
-          `translateX(${-600 + progress * totalDistance}px)`;
-      }
+        ticking = false;
+      });
     });
   });
 </script>
