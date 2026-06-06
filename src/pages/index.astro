@@ -1,0 +1,1013 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import logoUrl from "../assets/grompack_logo.png";
+import tudLogo from "../assets/tud-logo.png";
+
+import matthiasImg from "../assets/team/mf.jpeg";
+import marijnImg from "../assets/team/mdh.jpeg";
+import samImg from "../assets/team/sb.jpeg";
+import ralouImg from "../assets/team/rm.png";
+import wouterImg from "../assets/team/wdr.jpeg";
+import tomImg from "../assets/team/tc.jpg";
+import gal1 from "../assets/gallery/gallery1.jpeg";
+import gal2 from "../assets/gallery/gallery2.jpeg";
+import gal3 from "../assets/gallery/gallery3.jpeg";
+import gal4 from "../assets/gallery/gallery4.jpeg";
+import gal5 from "../assets/gallery/gallery5.jpeg";
+import gal6 from "../assets/gallery/gallery6.jpeg";
+import gal7 from "../assets/gallery/gallery7.jpeg";
+import gal8 from "../assets/gallery/gallery8.jpeg";
+import gal9 from "../assets/gallery/gallery9.jpeg";
+import gal10 from "../assets/gallery/gallery10.jpeg";
+import gal11 from "../assets/gallery/gallery11.jpeg";
+import gal12 from "../assets/gallery/gallery12.jpeg";
+---
+
+<Layout title="GromPack | Precision Bio-logging">
+  <script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
+  ></script>
+
+  <main>
+    <header class="navbar">
+      <nav>
+        <Image src={logoUrl} alt="GromPack Logo" class="nav-logo" />
+        <ul>
+          <li><a href="/" class="active">Product</a></li>
+          <li><a href="/manual">Manual</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="content-wrapper">
+        <div class="hero-text">
+          <div class="badge">Bachelor Graduation Project</div>
+          <h1>GromPack.<br /> Precision Redefined.</h1>
+          <p>
+            A wireless neurorecording and stimulation device for the Madagascar
+            Hissing Cockroach (MHC). Designed to replace restrictive wired
+            setups, it allows for undisturbed behavioral analysis.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn-primary">Download Final Report</a>
+            <button id="buyBtn" class="btn-secondary">Buy</button>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <div class="render-placeholder" id="product-render">
+            <model-viewer
+              src="/pcb.glb"
+              alt="A 3D model of the GromPack PCB"
+              auto-rotate
+              camera-controls
+              rotation-per-second="30deg"
+              interaction-prompt="none"
+              style="width: 100%; height: 100%; border-radius: 24px;"
+            >
+              <div
+                slot="poster"
+                style="display:flex; height:100%; align-items:center; justify-content:center;"
+              >
+                Interactive 3D Render Here
+              </div>
+            </model-viewer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="buyModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Coming Soon</h2>
+        <p>
+          GromPack is currently in the final stages of testing and is not yet
+          available for public purchase.
+        </p>
+        <p>
+          If you'd like to request an evaluation unit or be notified when we
+          launch, please reach out to us at:
+        </p>
+        <a href="mailto:tomcajot@gmail.com" class="email-link"
+          >tomcajot@gmail.com</a
+        >
+      </div>
+    </div>
+
+    <div class="roach-divider">
+      <div class="roach-track">
+        <div class="roach-mover">
+          <svg
+            class="scurrying-roach"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 80 40 Q 95 30 100 10"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 80 60 Q 95 70 100 90"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 40 30 L 30 10"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 50 25 L 50 5"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 60 30 L 70 10"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 40 70 L 30 90"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 50 75 L 50 95"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M 60 70 L 70 90"
+              stroke="var(--text-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <ellipse cx="50" cy="50" rx="35" ry="20" fill="var(--text-primary)"
+            ></ellipse>
+            <circle cx="80" cy="50" r="8" fill="var(--text-primary)"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <section class="showcase">
+      <div class="content-wrapper">
+        <div class="card-grid">
+          <div class="card card-lrg">
+            <h2>Ultralight Form Factor</h2>
+            <p>
+              The total mass of the headstage is below 6 g, staying well below
+              the biological overload limit of 15 g to minimize the impact on
+              natural behavior.
+            </p>
+          </div>
+          <div class="card card-med">
+            <h3>High-Fidelity Neurorecording</h3>
+            <p>
+              Captures analog neural signals in the 300 to 3000 Hz range with a
+              sampling rate of 12.5 kHz.
+            </p>
+          </div>
+          <div class="card card-med">
+            <h3>Real-Time Preview</h3>
+            <p>
+              Maintains a stable connection within a 10 m open field range,
+              delivering low-latency data preview with sub 100 ms delay.
+            </p>
+          </div>
+          <div class="card card-med">
+            <h3>Integrated Power</h3>
+            <p>
+              Provides an uninterrupted operational time of at least 2 hours of
+              wireless data transfer via an onboard LiPo battery system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team">
+      <div class="content-wrapper">
+        <h2>Team Kakkerlak</h2>
+        <p class="section-subtitle">The engineers behind the grompack.</p>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <img
+              src={matthiasImg.src}
+              alt="Matthias Fransen"
+              class="team-avatar"
+            />
+            <h4>Matthias Fransen</h4>
+            <p>"Ik wil even wat alone-time met de 30 Hz."</p>
+          </div>
+          <div class="team-member">
+            <img
+              src={marijnImg.src}
+              alt="Marijn den Hartog"
+              class="team-avatar"
+            />
+            <h4>Marijn den Hartog</h4>
+            <p>"Ik wardeer je enthousiasme!"</p>
+          </div>
+          <div class="team-member">
+            <img src={samImg.src} alt="Sam Breddels" class="team-avatar" />
+            <h4>Sam Breddels</h4>
+            <p>"Lekker lasagne."</p>
+          </div>
+          <div class="team-member">
+            <img src={ralouImg.src} alt="Ralou Mantzou" class="team-avatar" />
+            <h4>Ralou Mantzou</h4>
+            <p>"We gaan surgery doen op de test pcb."</p>
+          </div>
+          <div class="team-member">
+            <img
+              src={wouterImg.src}
+              alt="Wouter de Ruiter"
+              class="team-avatar"
+            />
+            <h4>Wouter de Ruiter</h4>
+            <p>"Verwarm de oven maar vast wij nemen nog wat mee."</p>
+          </div>
+          <div class="team-member">
+            <img src={tomImg.src} alt="Tom Cajot" class="team-avatar" />
+            <h4>Tom Cajot</h4>
+            <p>"Dat komt goed."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="content-wrapper">
+        <h2>Behind the Scenes</h2>
+        <p class="section-subtitle">
+          From breadboards to biological deployment.
+        </p>
+
+        <div class="gallery-grid">
+          <Image
+            src={gal1}
+            alt="GromPack build process 1"
+            class="gallery-img"
+          />
+          <Image
+            src={gal2}
+            alt="GromPack build process 2"
+            class="gallery-img"
+          />
+          <Image
+            src={gal3}
+            alt="GromPack build process 3"
+            class="gallery-img"
+          />
+          <Image
+            src={gal4}
+            alt="GromPack build process 4"
+            class="gallery-img"
+          />
+          <Image
+            src={gal5}
+            alt="GromPack build process 5"
+            class="gallery-img"
+          />
+          <Image
+            src={gal6}
+            alt="GromPack build process 6"
+            class="gallery-img"
+          />
+          <Image
+            src={gal7}
+            alt="GromPack build process 7"
+            class="gallery-img"
+          />
+          <Image
+            src={gal8}
+            alt="GromPack build process 8"
+            class="gallery-img"
+          />
+          <Image
+            src={gal9}
+            alt="GromPack build process 9"
+            class="gallery-img"
+          />
+          <Image
+            src={gal10}
+            alt="GromPack build process 10"
+            class="gallery-img"
+          />
+          <Image
+            src={gal11}
+            alt="GromPack build process 11"
+            class="gallery-img"
+          />
+          <Image
+            src={gal12}
+            alt="GromPack build process 12"
+            class="gallery-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="academic-context">
+      <div class="content-wrapper flex-center">
+        <div class="academic-card">
+          <div class="logos">
+            <img src={tudLogo.src} alt="University Logo" class="uni-logo" />
+          </div>
+          <div class="academic-info">
+            <h3>Bachelor Graduation Project (EE3L1)</h3>
+            <p>
+              Designed for the Psychobiology department of the University of
+              Amsterdam (UvA).
+            </p>
+            <div class="supervisors">
+              <strong>Supervised by:</strong><br />
+              Leon Abelmann &amp; Johan Meyer
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style is:global>
+  /* Keep your existing root, body, typography, navbar, hero, showcase, and academic styles here. 
+     I am only adding the new styles for the avatars and gallery below to save space. */
+
+  :root {
+    --bg: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --border: #d2d2d7;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+      sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Navbar */
+  .navbar {
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(245, 245, 247, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 100;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: center;
+  }
+
+  .nav-logo {
+    height: 44px; /* Increased from 30px */
+    width: auto; /* Ensures the proportions stay perfect */
+  }
+
+  nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+  nav ul a:hover,
+  nav ul a.active {
+    color: var(--text-primary);
+  }
+
+  /* Hero Section */
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    background-color: white;
+  }
+
+  .hero .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .hero-text {
+    flex: 1;
+    max-width: 540px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #f5f5f7;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+  }
+
+  .hero-text h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+  }
+  .hero-text p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+  }
+  .btn-primary {
+    background-color: var(--text-primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 980px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+  }
+  .btn-primary:hover {
+    background-color: #000;
+    transform: scale(1.02);
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    padding: 14px 28px;
+    border-radius: 980px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    border: 1px solid var(--text-primary);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-secondary:hover {
+    background-color: var(--bg);
+    transform: scale(1.02);
+  }
+
+  /* Modal Styling */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 31, 0.4);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal.show {
+    display: flex; /* Triggers visibility via JavaScript */
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .close-btn:hover {
+    color: var(--text-primary);
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .email-link {
+    color: #0071e3;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .email-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Showcase Card Colors (Apple Gradient Text) */
+  .card-med:nth-child(2) h3 {
+    background: linear-gradient(90deg, #34c759, #30b0c7); /* Green to Teal */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .card-med:nth-child(3) h3 {
+    background: linear-gradient(90deg, #0071e3, #af52de); /* Blue to Purple */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .card-med:nth-child(4) h3 {
+    background: linear-gradient(90deg, #ff9500, #ff2d55); /* Orange to Pink */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .render-placeholder {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4/3;
+    background: #e5e5ea;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px dashed var(--border);
+  }
+
+  /* Product Showcase Cards */
+  .showcase {
+    padding: 0px 0;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    background: white;
+    padding: 48px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  .card h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .card p {
+    font-size: 17px;
+  }
+
+  .card-lrg {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 80px 40px;
+  }
+  .card-lrg p {
+    max-width: 600px;
+  }
+  .card-med {
+    grid-column: span 1;
+  }
+
+  /* Updated Team Section */
+  .team {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .team h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    margin-bottom: 60px;
+    color: var(--text-secondary);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 24px;
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures non-square images don't stretch */
+    margin-bottom: 16px;
+    border: 2px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .placeholder-bg {
+    background-color: white;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .team-member h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+  .team-member p {
+    font-size: 14px;
+    font-style: italic;
+    max-width: 80%;
+    color: var(--text-secondary);
+  }
+
+  /* New Gallery Section */
+  .gallery {
+    padding: 60px 0 120px;
+    text-align: center;
+  }
+  .gallery h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-img:hover {
+    transform: scale(1.02);
+  }
+
+  .gallery-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #e5e5ea;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-family: monospace;
+  }
+
+  /* Academic Section */
+  .academic-context {
+    padding: 0 0 120px;
+  }
+  .academic-card {
+    background: white;
+    border-radius: 24px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .uni-logo {
+    max-height: 140px; /* Prevents the logo from getting massive */
+    width: auto; /* Keeps the aspect ratio intact */
+    margin-bottom: 30px; /* Maintains the clean spacing above the text */
+    opacity: 0.85; /* Optional: Slight transparency to make it look sleeker */
+  }
+
+  .academic-info h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .academic-info p {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .supervisors {
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    /* 1. Global & Navbar */
+    .content-wrapper,
+    nav {
+      padding: 0 24px;
+    }
+    .nav-logo {
+      height: 32px;
+    }
+    nav ul {
+      gap: 16px;
+    }
+
+    /* 2. Hero Section */
+    .hero .content-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-text h1 {
+      font-size: 48px;
+    }
+    .hero-actions {
+      justify-content: center;
+    }
+    .hero-image-container {
+      display: none;
+    } /* Hides 3D render on mobile */
+
+    /* 3. Showcase Grid */
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+    .card-lrg {
+      grid-column: span 1;
+      padding: 40px 24px;
+    }
+    .card {
+      padding: 32px 24px;
+    }
+
+    /* 4. Buy Modal */
+    .modal-content {
+      width: 90%;
+      padding: 32px 24px;
+      margin: 0 16px;
+    }
+    .modal-content h2 {
+      font-size: 24px;
+    }
+    .close-btn {
+      top: 12px;
+      right: 16px;
+    }
+
+    /* 5. Team & Gallery */
+    .team-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Make buttons full-width on tiny screens for easier tapping */
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  /* Cockroach Scroll-Linked Animation */
+  .roach-divider {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+  }
+
+  .roach-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .roach-mover {
+    position: absolute;
+    top: 50%;
+    left: -100px; /* Start 100px off-screen to the left */
+    will-change: transform; /* Hardware acceleration for smooth scrolling */
+  }
+
+  .scurrying-roach {
+    height: 24px;
+    width: auto;
+    display: block;
+    opacity: 0.7;
+    animation: wobble 0.15s infinite alternate ease-in-out;
+  }
+
+  @keyframes wobble {
+    0% {
+      transform: translateY(-50%) rotate(-4deg);
+    }
+    100% {
+      transform: translateY(-50%) rotate(4deg);
+    }
+  }
+</style>
+
+<script>
+  // Modal Logic
+  const modal = document.getElementById("buyModal");
+  const buyBtn = document.getElementById("buyBtn");
+  const closeBtn = document.querySelector(".close-btn");
+
+  if (buyBtn && modal && closeBtn) {
+    // Open modal
+    buyBtn.addEventListener("click", () => {
+      modal.classList.add("show");
+    });
+
+    // Close modal on X click
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+
+    // Close modal when clicking outside the white box
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.classList.remove("show");
+      }
+    });
+  }
+
+  // Parallax - Make sure to NOT apply this to the model-viewer itself,
+  // only the container, otherwise it messes with the 3D interaction.
+  document.addEventListener("DOMContentLoaded", () => {
+    const placeholder = document.getElementById("product-render");
+    window.addEventListener("scroll", () => {
+      let offset = window.pageYOffset;
+      if (placeholder) {
+        (placeholder as HTMLElement).style.transform =
+          `translateY(${offset * -0.05}px)`;
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const placeholder = document.getElementById("product-render");
+    const divider = document.querySelector(".roach-divider");
+    const roachMover = document.querySelector(".roach-mover");
+
+    window.addEventListener("scroll", () => {
+      // 1. Smooth Parallax
+      let offset = window.pageYOffset;
+      if (placeholder) {
+        (placeholder as HTMLElement).style.transform =
+          `translateY(${offset * -0.05}px)`;
+      }
+
+      // 2. Mathematically Perfect Roach Scurry
+      if (divider && roachMover) {
+        const rect = divider.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Measure the physical track width so it never gets clipped
+        const trackWidth = divider.clientWidth;
+
+        // Progress: 0 = just appeared, 1 = leaving screen
+        let progress = 1 - rect.top / windowHeight;
+        progress = Math.max(0, Math.min(1, progress));
+
+        // We add 200px to the trackWidth to ensure it walks completely off the right edge
+        const totalDistance = trackWidth + 200;
+
+        // TranslateX is much smoother than modifying 'left'
+        (roachMover as HTMLElement).style.transform =
+          `translateX(${-600 + progress * totalDistance}px)`;
+      }
+    });
+  });
+</script>
